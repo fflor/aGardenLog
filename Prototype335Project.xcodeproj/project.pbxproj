@@ -13,6 +13,10 @@
 		552D85C71E80DFB100B001E9 /* Prototype335Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 552D85C51E80DFB100B001E9 /* Prototype335Project.xcdatamodeld */; };
 		552D85C91E80DFB100B001E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552D85C81E80DFB100B001E9 /* Assets.xcassets */; };
 		552D85CC1E80DFB100B001E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552D85CA1E80DFB100B001E9 /* LaunchScreen.storyboard */; };
+		552D85D61E80F27100B001E9 /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85D51E80F27100B001E9 /* LogTableViewController.swift */; };
+		552D85D81E80F2E100B001E9 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85D71E80F2E100B001E9 /* LogTableViewCell.swift */; };
+		552D85DA1E80F3A800B001E9 /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85D91E80F3A800B001E9 /* PlantData.swift */; };
+		552D85DC1E80F55F00B001E9 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85DB1E80F55F00B001E9 /* PlantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		552D85C81E80DFB100B001E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552D85CB1E80DFB100B001E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552D85CD1E80DFB100B001E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552D85D51E80F27100B001E9 /* LogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogTableViewController.swift; path = ../LogTableViewController.swift; sourceTree = "<group>"; };
+		552D85D71E80F2E100B001E9 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
+		552D85D91E80F3A800B001E9 /* PlantData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
+		552D85DB1E80F55F00B001E9 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,13 @@
 		552D85BD1E80DFB100B001E9 /* Prototype335Project */ = {
 			isa = PBXGroup;
 			children = (
+				552D85D51E80F27100B001E9 /* LogTableViewController.swift */,
 				552D85BE1E80DFB100B001E9 /* AppDelegate.swift */,
 				552D85C01E80DFB100B001E9 /* ViewController.swift */,
 				552D85C21E80DFB100B001E9 /* Main.storyboard */,
+				552D85DB1E80F55F00B001E9 /* PlantTableViewCell.swift */,
+				552D85D91E80F3A800B001E9 /* PlantData.swift */,
+				552D85D71E80F2E100B001E9 /* LogTableViewCell.swift */,
 				552D85C81E80DFB100B001E9 /* Assets.xcassets */,
 				552D85CA1E80DFB100B001E9 /* LaunchScreen.storyboard */,
 				552D85CD1E80DFB100B001E9 /* Info.plist */,
@@ -140,8 +152,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552D85D61E80F27100B001E9 /* LogTableViewController.swift in Sources */,
 				552D85C11E80DFB100B001E9 /* ViewController.swift in Sources */,
+				552D85DC1E80F55F00B001E9 /* PlantTableViewCell.swift in Sources */,
 				552D85BF1E80DFB100B001E9 /* AppDelegate.swift in Sources */,
+				552D85DA1E80F3A800B001E9 /* PlantData.swift in Sources */,
+				552D85D81E80F2E100B001E9 /* LogTableViewCell.swift in Sources */,
 				552D85C71E80DFB100B001E9 /* Prototype335Project.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
