@@ -45,6 +45,7 @@ class record
     var name: String = ""
     var description:String = ""
     var pic: UIImage = UIImage(named: "succulent")!
+    var logs:[LogEntry] = []
     
     init (n: String, d: String)
     {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LogEntity" representedClassName="LogEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="entry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="plant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="logEntry" inverseEntity="PlantEntity" syncable="YES"/>
+    </entity>
+    <entity name="PlantEntity" representedClassName="PlantEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="plantName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="logEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LogEntity" inverseName="plant" inverseEntity="LogEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PlantEntity" positionX="18" positionY="-22" width="128" height="118"/>
+        <element name="LogEntity" positionX="106" positionY="108" width="146" height="103"/>
+    </elements>
+</model>

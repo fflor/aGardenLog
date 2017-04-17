@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "552D85BA1E80DFB100B001E9"
-               BuildableName = "Prototype335Project.app"
-               BlueprintName = "Prototype335Project"
-               ReferencedContainer = "container:Prototype335Project.xcodeproj">
+               BuildableName = "aGardenLog.app"
+               BlueprintName = "aGardenLog"
+               ReferencedContainer = "container:aGardenLog.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "552D85BA1E80DFB100B001E9"
-            BuildableName = "Prototype335Project.app"
-            BlueprintName = "Prototype335Project"
-            ReferencedContainer = "container:Prototype335Project.xcodeproj">
+            BuildableName = "aGardenLog.app"
+            BlueprintName = "aGardenLog"
+            ReferencedContainer = "container:aGardenLog.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "552D85BA1E80DFB100B001E9"
-            BuildableName = "Prototype335Project.app"
-            BlueprintName = "Prototype335Project"
-            ReferencedContainer = "container:Prototype335Project.xcodeproj">
+            BuildableName = "aGardenLog.app"
+            BlueprintName = "aGardenLog"
+            ReferencedContainer = "container:aGardenLog.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "552D85BA1E80DFB100B001E9"
-            BuildableName = "Prototype335Project.app"
-            BlueprintName = "Prototype335Project"
-            ReferencedContainer = "container:Prototype335Project.xcodeproj">
+            BuildableName = "aGardenLog.app"
+            BlueprintName = "aGardenLog"
+            ReferencedContainer = "container:aGardenLog.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

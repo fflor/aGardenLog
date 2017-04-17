@@ -7,24 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55015DF11EA5775A002DEC6D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55015DF01EA5775A002DEC6D /* AddViewController.swift */; };
 		552D85BF1E80DFB100B001E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85BE1E80DFB100B001E9 /* AppDelegate.swift */; };
 		552D85C11E80DFB100B001E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85C01E80DFB100B001E9 /* ViewController.swift */; };
 		552D85C41E80DFB100B001E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552D85C21E80DFB100B001E9 /* Main.storyboard */; };
-		552D85C71E80DFB100B001E9 /* Prototype335Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 552D85C51E80DFB100B001E9 /* Prototype335Project.xcdatamodeld */; };
 		552D85C91E80DFB100B001E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552D85C81E80DFB100B001E9 /* Assets.xcassets */; };
 		552D85CC1E80DFB100B001E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552D85CA1E80DFB100B001E9 /* LaunchScreen.storyboard */; };
 		552D85D61E80F27100B001E9 /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85D51E80F27100B001E9 /* LogTableViewController.swift */; };
 		552D85D81E80F2E100B001E9 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85D71E80F2E100B001E9 /* LogTableViewCell.swift */; };
 		552D85DA1E80F3A800B001E9 /* PlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85D91E80F3A800B001E9 /* PlantData.swift */; };
 		552D85DC1E80F55F00B001E9 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552D85DB1E80F55F00B001E9 /* PlantTableViewCell.swift */; };
+		555498571EA5275300064365 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555498561EA5275300064365 /* LogEntry.swift */; };
+		55AA9C871EA52DD800F35A70 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C851EA52DD800F35A70 /* Model.xcdatamodeld */; };
+		55AA9C9A1EA534A700F35A70 /* PlantEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C961EA534A700F35A70 /* PlantEntity+CoreDataClass.swift */; };
+		55AA9C9B1EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C971EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift */; };
+		55AA9C9C1EA534A700F35A70 /* LogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C981EA534A700F35A70 /* LogEntity+CoreDataClass.swift */; };
+		55AA9C9D1EA534A700F35A70 /* LogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C991EA534A700F35A70 /* LogEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		552D85BB1E80DFB100B001E9 /* Prototype335Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototype335Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55015DF01EA5775A002DEC6D /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		552D85BB1E80DFB100B001E9 /* aGardenLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aGardenLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		552D85BE1E80DFB100B001E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		552D85C01E80DFB100B001E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		552D85C31E80DFB100B001E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		552D85C61E80DFB100B001E9 /* Prototype335Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prototype335Project.xcdatamodel; sourceTree = "<group>"; };
 		552D85C81E80DFB100B001E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552D85CB1E80DFB100B001E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552D85CD1E80DFB100B001E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +38,12 @@
 		552D85D71E80F2E100B001E9 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		552D85D91E80F3A800B001E9 /* PlantData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantData.swift; sourceTree = "<group>"; };
 		552D85DB1E80F55F00B001E9 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		555498561EA5275300064365 /* LogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		55AA9C861EA52DD800F35A70 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		55AA9C961EA534A700F35A70 /* PlantEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlantEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55AA9C971EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlantEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		55AA9C981EA534A700F35A70 /* LogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55AA9C991EA534A700F35A70 /* LogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +60,7 @@
 		552D85B21E80DFB100B001E9 = {
 			isa = PBXGroup;
 			children = (
-				552D85BD1E80DFB100B001E9 /* Prototype335Project */,
+				552D85BD1E80DFB100B001E9 /* aGardenLog */,
 				552D85BC1E80DFB100B001E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,35 +68,42 @@
 		552D85BC1E80DFB100B001E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				552D85BB1E80DFB100B001E9 /* Prototype335Project.app */,
+				552D85BB1E80DFB100B001E9 /* aGardenLog.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		552D85BD1E80DFB100B001E9 /* Prototype335Project */ = {
+		552D85BD1E80DFB100B001E9 /* aGardenLog */ = {
 			isa = PBXGroup;
 			children = (
+				55AA9C961EA534A700F35A70 /* PlantEntity+CoreDataClass.swift */,
+				55AA9C971EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift */,
+				55AA9C981EA534A700F35A70 /* LogEntity+CoreDataClass.swift */,
+				55AA9C991EA534A700F35A70 /* LogEntity+CoreDataProperties.swift */,
 				552D85D51E80F27100B001E9 /* LogTableViewController.swift */,
 				552D85BE1E80DFB100B001E9 /* AppDelegate.swift */,
 				552D85C01E80DFB100B001E9 /* ViewController.swift */,
 				552D85C21E80DFB100B001E9 /* Main.storyboard */,
+				55015DF01EA5775A002DEC6D /* AddViewController.swift */,
 				552D85DB1E80F55F00B001E9 /* PlantTableViewCell.swift */,
 				552D85D91E80F3A800B001E9 /* PlantData.swift */,
 				552D85D71E80F2E100B001E9 /* LogTableViewCell.swift */,
+				555498561EA5275300064365 /* LogEntry.swift */,
 				552D85C81E80DFB100B001E9 /* Assets.xcassets */,
 				552D85CA1E80DFB100B001E9 /* LaunchScreen.storyboard */,
 				552D85CD1E80DFB100B001E9 /* Info.plist */,
-				552D85C51E80DFB100B001E9 /* Prototype335Project.xcdatamodeld */,
+				55AA9C851EA52DD800F35A70 /* Model.xcdatamodeld */,
 			);
+			name = aGardenLog;
 			path = Prototype335Project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		552D85BA1E80DFB100B001E9 /* Prototype335Project */ = {
+		552D85BA1E80DFB100B001E9 /* aGardenLog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 552D85D01E80DFB100B001E9 /* Build configuration list for PBXNativeTarget "Prototype335Project" */;
+			buildConfigurationList = 552D85D01E80DFB100B001E9 /* Build configuration list for PBXNativeTarget "aGardenLog" */;
 			buildPhases = (
 				552D85B71E80DFB100B001E9 /* Sources */,
 				552D85B81E80DFB100B001E9 /* Frameworks */,
@@ -94,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = Prototype335Project;
+			name = aGardenLog;
 			productName = Prototype335Project;
-			productReference = 552D85BB1E80DFB100B001E9 /* Prototype335Project.app */;
+			productReference = 552D85BB1E80DFB100B001E9 /* aGardenLog.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 552D85B61E80DFB100B001E9 /* Build configuration list for PBXProject "Prototype335Project" */;
+			buildConfigurationList = 552D85B61E80DFB100B001E9 /* Build configuration list for PBXProject "aGardenLog" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -129,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				552D85BA1E80DFB100B001E9 /* Prototype335Project */,
+				552D85BA1E80DFB100B001E9 /* aGardenLog */,
 			);
 		};
 /* End PBXProject section */
@@ -154,11 +173,17 @@
 			files = (
 				552D85D61E80F27100B001E9 /* LogTableViewController.swift in Sources */,
 				552D85C11E80DFB100B001E9 /* ViewController.swift in Sources */,
+				55AA9C9C1EA534A700F35A70 /* LogEntity+CoreDataClass.swift in Sources */,
 				552D85DC1E80F55F00B001E9 /* PlantTableViewCell.swift in Sources */,
+				55AA9C871EA52DD800F35A70 /* Model.xcdatamodeld in Sources */,
+				55AA9C9B1EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift in Sources */,
 				552D85BF1E80DFB100B001E9 /* AppDelegate.swift in Sources */,
+				55AA9C9A1EA534A700F35A70 /* PlantEntity+CoreDataClass.swift in Sources */,
 				552D85DA1E80F3A800B001E9 /* PlantData.swift in Sources */,
+				555498571EA5275300064365 /* LogEntry.swift in Sources */,
 				552D85D81E80F2E100B001E9 /* LogTableViewCell.swift in Sources */,
-				552D85C71E80DFB100B001E9 /* Prototype335Project.xcdatamodeld in Sources */,
+				55015DF11EA5775A002DEC6D /* AddViewController.swift in Sources */,
+				55AA9C9D1EA534A700F35A70 /* LogEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +309,7 @@
 				DEVELOPMENT_TEAM = BWSLUFSJRA;
 				INFOPLIST_FILE = Prototype335Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.felipe.Prototype335Project;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.felipe.aGardenLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -297,7 +322,7 @@
 				DEVELOPMENT_TEAM = BWSLUFSJRA;
 				INFOPLIST_FILE = Prototype335Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.felipe.Prototype335Project;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.felipe.aGardenLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -306,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		552D85B61E80DFB100B001E9 /* Build configuration list for PBXProject "Prototype335Project" */ = {
+		552D85B61E80DFB100B001E9 /* Build configuration list for PBXProject "aGardenLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				552D85CE1E80DFB100B001E9 /* Debug */,
@@ -315,24 +340,25 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		552D85D01E80DFB100B001E9 /* Build configuration list for PBXNativeTarget "Prototype335Project" */ = {
+		552D85D01E80DFB100B001E9 /* Build configuration list for PBXNativeTarget "aGardenLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				552D85D11E80DFB100B001E9 /* Debug */,
 				552D85D21E80DFB100B001E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		552D85C51E80DFB100B001E9 /* Prototype335Project.xcdatamodeld */ = {
+		55AA9C851EA52DD800F35A70 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				552D85C61E80DFB100B001E9 /* Prototype335Project.xcdatamodel */,
+				55AA9C861EA52DD800F35A70 /* Model.xcdatamodel */,
 			);
-			currentVersion = 552D85C61E80DFB100B001E9 /* Prototype335Project.xcdatamodel */;
-			path = Prototype335Project.xcdatamodeld;
+			currentVersion = 55AA9C861EA52DD800F35A70 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
