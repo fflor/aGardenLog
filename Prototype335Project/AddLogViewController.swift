@@ -16,6 +16,8 @@ class AddLogViewController: UIViewController {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var details: UITextView!
+   
+    @IBOutlet weak var saveButton: UIButton!
     
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -24,6 +26,7 @@ class AddLogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         status.isHidden = true;
+        saveButton.isHidden = false;
 
         // Do any additional setup after loading the view.
     }
@@ -68,6 +71,6 @@ class AddLogViewController: UIViewController {
             status.textColor = UIColor.red
         }
         status.isHidden = false
-        print(log)
+        saveButton.isHidden = true
     }
 }

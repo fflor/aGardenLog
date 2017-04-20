@@ -143,6 +143,13 @@ class LogTableViewController: UITableViewController {
             if let addlogviewController: AddLogViewController = segue.destination as? AddLogViewController{
                 addlogviewController.plant = plant
             }
+        }else if(segue.identifier == "toLog"){
+            let selectedLog: LogEntity = self.logs[self.logList.indexPath(for: sender as! UITableViewCell)!.row]
+            
+            if let logviewController: LogViewController = segue.destination as? LogViewController{
+                logviewController.log = selectedLog
+            }
+            
         }
         
     }

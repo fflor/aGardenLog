@@ -9,10 +9,18 @@
 import UIKit
 
 class LogViewController: UIViewController {
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var details: UITextView!
+    @IBOutlet weak var dateLabel: UILabel!
 
+    var log: LogEntity?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        photo.image = UIImage(data: log?.photo as! Data)
+        details.text = log?.entry
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        dateLabel.text = formatter.string(from: log?.date as! Date)
         // Do any additional setup after loading the view.
     }
 
