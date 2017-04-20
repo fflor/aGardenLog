@@ -24,6 +24,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         _ = fetchRecord()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        _ = fetchRecord()
+        PlantList.reloadData()
+    }
     
     //MARK: - core data
    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -34,15 +38,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PlantEntity")
         var count = 0
         // Execute the fetch request and save the results to the array, plants
-       // if let fetchResults 
             plants = (( try? managedObjectContext.fetch(fetchRequest)) as? [PlantEntity])!
-       // {
+
             count = plants.count
-        //    if count != 0 {
-             //   plants = fetchResults
-          //  }
-        //}
-        
+      
         return count
     }
     
@@ -74,6 +73,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     //Delete cells
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
+            managedObjectContext.delete(plants[indexPath.row])
             do{
                 
                 try managedObjectContext.save()
@@ -88,10 +88,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     //TODO: -seque when table cell selected
     
-    
-    @IBAction func unwindToMain(_ segue: UIStoryboardSegue){
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //
+
+        if(segue.identifier == "toLogTable"){
+            let selectedPlant: PlantEntity = self.plants[self.PlantList.indexPath(for: sender as! UITableViewCell)!.row]
+            
+            if let logtableviewController: LogTableViewController = segue.destination as? LogTableViewController{
+                logtableviewController.plant = selectedPlant
+            }
+        }
+        
     }
+
 
 }
 

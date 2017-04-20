@@ -1,32 +1,31 @@
 //
-//  AddViewController.swift
+//  AddLogViewController.swift
 //  aGardenLog
 //
-//  Created by felipe on 4/17/17.
+//  Created by felipe on 4/19/17.
 //  Copyright © 2017 felipe. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AddViewController: UIViewController {
+class AddLogViewController: UIViewController {
+
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var plantName: UITextField!
+    
+    @IBOutlet weak var status: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var details: UITextView!
-    @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var saveButton: UIToolbar!
-
-       let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var plant:PlantEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        status.textColor = UIColor.green
-        status.isHidden = true
-        saveButton.isHidden = false
+        status.isHidden = true;
+
         // Do any additional setup after loading the view.
-        details!.layer.borderWidth = 1
-        details!.layer.borderColor = UIColor.black.cgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,28 +47,27 @@ class AddViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         
         
-        let ent = NSEntityDescription.entity(forEntityName: "PlantEntity", in: self.managedObjectContext)
+        let ent = NSEntityDescription.entity(forEntityName: "LogEntity", in: self.managedObjectContext)
         
-        let plant = PlantEntity(entity: ent!, insertInto: managedObjectContext)
-        plant.plantName = plantName.text
-        plant.date = datePicker.date as NSDate?
-        plant.details = details.text
+        let log = LogEntity(entity: ent!, insertInto: managedObjectContext)
+        //plant entity needs to be passed in via segue
+        log.plant = plant
+        log.entry =  details.text
+        log.date = datePicker.date as NSDate?
+        
         
         let imageData = UIImagePNGRepresentation(photo.image!)
-        plant.picture = imageData! as NSData?
+        log.photo = imageData! as NSData?
         do {
             try managedObjectContext.save()
-                       
+            
+            
             
         } catch let error {
             status.text = error.localizedDescription
             status.textColor = UIColor.red
         }
         status.isHidden = false
-        saveButton.isHidden = true
-        
+        print(log)
     }
-
-    
-    //TODO: -add image picker
 }
