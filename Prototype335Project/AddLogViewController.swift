@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddLogViewController: UIViewController {
+class AddLogViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     
@@ -17,8 +17,9 @@ class AddLogViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var details: UITextView!
    
+    @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    
+     let picker = UIImagePickerController()
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var plant:PlantEntity?
@@ -72,5 +73,37 @@ class AddLogViewController: UIViewController {
         }
         status.isHidden = false
         saveButton.isHidden = true
+    }
+    
+    //MARK: - image picker
+    
+    func imagePickerController( _ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]){
+        
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        photo.contentMode = .scaleAspectFit
+        photo.image = selectedImage
+        picker.dismiss(animated: true, completion: nil)
+        addPhotoButton.isHidden = true
+    }
+    func imagePickerControllerDidCancel(_ picker:UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+        
+    }
+
+    @IBAction func addPhoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker, animated: true, completion:nil)
+        }else{
+            picker.delegate = self
+            picker.allowsEditing = false
+            picker.sourceType = .photoLibrary
+            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            picker.modalPresentationStyle = .popover
+            present(picker,animated:true,completion:nil)
+        }
     }
 }

@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Prototype335Project/AddViewController.swift"
-            timestampString = "514350575.179237"
+            timestampString = "514398558.343134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "save(_:)"
-            landmarkType = "7">
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "AddViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,61 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Prototype335Project/AddViewController.swift"
-            timestampString = "514350575.179237"
+            timestampString = "514398558.343134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "save(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Prototype335Project/AddViewController.swift"
-            timestampString = "514350575.179237"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "save(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Prototype335Project/AddViewController.swift"
-            timestampString = "514350575.179237"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "save(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Prototype335Project/AddViewController.swift"
-            timestampString = "514357675.373803"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "save(_:)"
-            landmarkType = "7">
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "AddViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,12 +106,12 @@
                   moduleName = "aGardenLog"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/philip/Google%20Drive/ASU/2017Spring/CSE335/code/Prototype335Project/LogTableViewController.swift"
-                  timestampString = "514358988.557149"
+                  timestampString = "514398252.239976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
                   endingLineNumber = "143"
-                  offsetFromSymbolStart = "336">
+                  offsetFromSymbolStart = "351">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -169,12 +121,12 @@
                   moduleName = "aGardenLog"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/philip/Google%20Drive/ASU/2017Spring/CSE335/code/Prototype335Project/LogTableViewController.swift"
-                  timestampString = "514358988.563464"
+                  timestampString = "514398252.245378"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "143"
                   endingLineNumber = "143"
-                  offsetFromSymbolStart = "488">
+                  offsetFromSymbolStart = "506">
                </Location>
             </Locations>
          </BreakpointContent>

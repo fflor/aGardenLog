@@ -30,7 +30,7 @@ class LogTableViewController: UITableViewController {
 
         
         count = logs.count
-        print(logs)
+        //print(logs)
         return count
     }
 

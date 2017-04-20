@@ -9,13 +9,16 @@
 import UIKit
 import CoreData
 
-class AddViewController: UIViewController {
-    @IBOutlet weak var photo: UIImageView!
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+   
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var plantName: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var details: UITextView!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var saveButton: UIToolbar!
+    let picker = UIImagePickerController()
 
        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -27,6 +30,7 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
         details!.layer.borderWidth = 1
         details!.layer.borderColor = UIColor.black.cgColor
+        addPhotoButton.isHidden = false//add photo button
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,8 +58,8 @@ class AddViewController: UIViewController {
         plant.plantName = plantName.text
         plant.date = datePicker.date as NSDate?
         plant.details = details.text
-        
-        let imageData = UIImagePNGRepresentation(photo.image!)
+        let image = picture.image
+        let imageData = UIImagePNGRepresentation(image!)
         plant.picture = imageData! as NSData?
         do {
             try managedObjectContext.save()
@@ -71,5 +75,34 @@ class AddViewController: UIViewController {
     }
 
     
-    //TODO: -add image picker
+    //MARK: - image picker
+    
+    func imagePickerController( _ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]){
+        
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        picture.contentMode = .scaleAspectFit
+        picture.image = selectedImage
+        picker.dismiss(animated: true, completion: nil)
+        addPhotoButton.isHidden = true
+    }
+    func imagePickerControllerDidCancel(_ picker:UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+        
+    }
+    @IBAction func addPhoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker, animated: true, completion:nil)
+        }else{
+            picker.delegate = self
+            picker.allowsEditing = false
+            picker.sourceType = .photoLibrary
+            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            picker.modalPresentationStyle = .popover
+            present(picker,animated:true,completion:nil)
+        }
+    }
 }
