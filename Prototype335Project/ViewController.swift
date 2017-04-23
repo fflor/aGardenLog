@@ -17,6 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var degFLabel: UILabel!
     //@IBOutlet weak var degCLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
     var latitude = "82.0"
     var longitude = "33.45"
     var manager:CLLocationManager!
@@ -165,9 +166,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
         let urlAsString = "http://api.openweathermap.org/data/2.5/weather?lat=\(dblLat)&lon=\(dblLon)&units=imperial&appid=a5d584d00cb4b3f6734b93649de1e768"
         
-        print(urlAsString)
+       
         let url = URL(string: urlAsString)!
-        print(url)
+       
         let urlSession = URLSession.shared
         
         let jsonQuery = urlSession.dataTask(with: url, completionHandler: { data, response, error -> Void in
@@ -182,16 +183,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 print("JSON Error \(err!.localizedDescription)")
             }
             
-            print(jsonResult)
+           // print(jsonResult)
             let report = jsonResult
             let weather = report["weather"]! as? NSArray
             let weatherDict = weather?[0] as? [String: AnyObject]
             let desc = weatherDict?["description"]
+            let icon = weatherDict?["icon"] as? String
+            let weatherImgName = (icon)! + ".png"
+            
             let main = report["main"] as? [String: AnyObject]
             let tempF = (main?["temp"] as? NSNumber)!.doubleValue
-            print(desc!)
+            //print(desc!)
             self.descLabel.text = desc as! String?
             self.degFLabel.text = String(format: "%.0f", tempF ) + "\u{00B0}F"
+            self.weatherImage.image = UIImage(named: weatherImgName)
             
         })
         
