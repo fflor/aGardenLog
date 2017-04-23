@@ -14,6 +14,7 @@ class LogViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var details: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
 
+    @IBOutlet weak var status: UILabel!
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -24,6 +25,8 @@ class LogViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        status.textColor = UIColor.green
+        status.isHidden = true
         photo.image = UIImage(data: log?.photo as! Data)
         details.text = log?.entry
         let formatter = DateFormatter()
@@ -31,6 +34,8 @@ class LogViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         dateLabel.text = formatter.string(from: log?.date as! Date)
         // Do any additional setup after loading the view.
         details.isEditable = false
+        details!.layer.borderWidth = 1
+        details!.layer.borderColor = UIColor.black.cgColor
         saveButton.isEnabled = false
         addPhotoButton.isHidden = true
     }
@@ -69,9 +74,11 @@ class LogViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             try managedObjectContext.save()
             
         } catch let error {
-            print(error.localizedDescription)
+            status.text = error.localizedDescription
+            status.textColor = UIColor.red
             
         }
+        status.isHidden = false
         saveButton.isEnabled = false
         details.isEditable = false
         addPhotoButton.isHidden = true
@@ -107,6 +114,26 @@ class LogViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             picker.modalPresentationStyle = .popover
             present(picker,animated:true,completion:nil)
         }
+    }
+    //MARK: - keyboard
+    // move the view upwards as keyboard appears
+    func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y -= 150
+    }
+    
+    // move the keyboard back as keyboard disapears
+    
+    func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y += 150
+    }
+    
+    // make the keyboard disapear as user touches outside the  text boxes
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        self.details.resignFirstResponder()
+        
+        
     }
 
     

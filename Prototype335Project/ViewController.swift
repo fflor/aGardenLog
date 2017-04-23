@@ -8,11 +8,18 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
     @IBOutlet weak var PlantList: UITableView!
-    //var plantEntries:plantData = plantData() commented out to switch to core data
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var degFLabel: UILabel!
+    //@IBOutlet weak var degCLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    var latitude = "82.0"
+    var longitude = "33.45"
+    var manager:CLLocationManager!
     
     //MARK: - viewDidLoad
     
@@ -22,6 +29,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         _ = fetchRecord()
+        dayLabel.text = getWeekday()
+        
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyKilometer
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+
+        
+        DispatchQueue.main.async(execute: {
+         self.getWeather()
+         
+         })
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -29,8 +50,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         PlantList.reloadData()
     }
     
+    //MARK: - Location Services
+    
+    func locationManager( _ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        let userLocation:CLLocation = locations[0]
+        latitude = "\(userLocation.coordinate.latitude)"
+        longitude = "\(userLocation.coordinate.longitude)"
+    }
     //MARK: - core data
-   let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var plants = [PlantEntity]()
     
     func fetchRecord() ->Int {
@@ -38,15 +66,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PlantEntity")
         var count = 0
         // Execute the fetch request and save the results to the array, plants
-            plants = (( try? managedObjectContext.fetch(fetchRequest)) as? [PlantEntity])!
-
-            count = plants.count
-      
+        plants = (( try? managedObjectContext.fetch(fetchRequest)) as? [PlantEntity])!
+        
+        count = plants.count
+        
         return count
     }
     
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,12 +114,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
         }
     }
-    //TODO: -seque when table cell selected
+    //MARK: - seques
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //
-
+        
         if(segue.identifier == "toLogTable"){
             let selectedPlant: PlantEntity = self.plants[self.PlantList.indexPath(for: sender as! UITableViewCell)!.row]
             
@@ -101,7 +129,78 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }
         
     }
-
-
+    
+    //MARK: - weather and JSON
+    
+    func getWeekday() -> String {
+        //set weekday
+        var wkday = "today"
+        let today = Calendar.current.component(.weekday, from: Date())
+        switch today{
+        case 1:
+            wkday = "Sunday"
+        case 2:
+            wkday = "Monday"
+        case 3:
+            wkday = "Tuesday"
+        case 4:
+            wkday = "Wednesday"
+        case 5:
+            wkday = "Thursday"
+        case 6:
+            wkday = "Friday"
+        default:
+            wkday = "Saturday"
+        }
+        return wkday
+        
+    }
+    
+    func getWeather() {
+        
+        
+        let dblLat = Double(latitude)!
+        let dblLon = Double(longitude)!
+        
+        
+        let urlAsString = "http://api.openweathermap.org/data/2.5/weather?lat=\(dblLat)&lon=\(dblLon)&units=imperial&appid=a5d584d00cb4b3f6734b93649de1e768"
+        
+        print(urlAsString)
+        let url = URL(string: urlAsString)!
+        print(url)
+        let urlSession = URLSession.shared
+        
+        let jsonQuery = urlSession.dataTask(with: url, completionHandler: { data, response, error -> Void in
+            if (error != nil) {
+                print(error!.localizedDescription)
+            }
+            var err: NSError?
+            
+            
+            let jsonResult = (try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! [String: AnyObject]
+            if (err != nil) {
+                print("JSON Error \(err!.localizedDescription)")
+            }
+            
+            print(jsonResult)
+            let report = jsonResult
+            let weather = report["weather"]! as? NSArray
+            let weatherDict = weather?[0] as? [String: AnyObject]
+            let desc = weatherDict?["description"]
+            let main = report["main"] as? [String: AnyObject]
+            let tempF = (main?["temp"] as? NSNumber)!.doubleValue
+            print(desc!)
+            self.descLabel.text = desc as! String?
+            self.degFLabel.text = String(format: "%.0f", tempF ) + "\u{00B0}F"
+            
+        })
+        
+        jsonQuery.resume()
+        
+        
+    }
+    
+    
+    
 }
 

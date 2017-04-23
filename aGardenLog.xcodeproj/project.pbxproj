@@ -21,6 +21,7 @@
 		55AA9C9B1EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C971EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift */; };
 		55AA9C9C1EA534A700F35A70 /* LogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C981EA534A700F35A70 /* LogEntity+CoreDataClass.swift */; };
 		55AA9C9D1EA534A700F35A70 /* LogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA9C991EA534A700F35A70 /* LogEntity+CoreDataProperties.swift */; };
+		55BA9FFC1EAC143400E45CA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BA9FFB1EAC143400E45CA8 /* CoreLocation.framework */; };
 		55C6AA101EA8312700EA5A20 /* AddLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6AA0F1EA8312700EA5A20 /* AddLogViewController.swift */; };
 		55C6AA121EA8321200EA5A20 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6AA111EA8321200EA5A20 /* LogViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		55AA9C971EA534A700F35A70 /* PlantEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlantEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		55AA9C981EA534A700F35A70 /* LogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		55AA9C991EA534A700F35A70 /* LogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		55BA9FFB1EAC143400E45CA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		55C6AA0F1EA8312700EA5A20 /* AddLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLogViewController.swift; sourceTree = "<group>"; };
 		55C6AA111EA8321200EA5A20 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BA9FFC1EAC143400E45CA8 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 			children = (
 				552D85BD1E80DFB100B001E9 /* aGardenLog */,
 				552D85BC1E80DFB100B001E9 /* Products */,
+				55BA9FFA1EAC143400E45CA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +100,14 @@
 			);
 			name = aGardenLog;
 			path = Prototype335Project;
+			sourceTree = "<group>";
+		};
+		55BA9FFA1EAC143400E45CA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55BA9FFB1EAC143400E45CA8 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -105,4 +105,25 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             present(picker,animated:true,completion:nil)
         }
     }
+    
+    //MARK: - keyboard hiding
+    // move the view upwards as keyboard appears
+    func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y -= 150
+    }
+    
+    // move the keyboard back as keyboard disapears
+    
+    func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y += 150
+    }
+    
+    // make the keyboard disapear as user touches outside the  text boxes
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        self.plantName.resignFirstResponder()
+        self.details.resignFirstResponder()
+        
+    }
 }
